@@ -1,0 +1,16 @@
+{% extends 'layouts/master.html' %}
+{% block c %}
+
+<h1>index</h1>
+<h1>students</h1>
+<ul>
+    {% for student in students %}
+        <li>{{ student.id }} : {{ student.name }}</li>
+    {% endfor %}
+    </ul>
+    <form action="" method="post" novalidate>
+    {{ forms.as_p }}
+    {% csrf_token %}
+        <input type="submit" value="send">
+    </form>
+        {% endblock %}
